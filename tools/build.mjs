@@ -40,7 +40,7 @@ const PAGES = {
 };
 
 // A tervben használt képek (asset-azonosító → fájlnév-tő, elérhető szélességek, eredeti méret)
-const LOGO_BLOB = 'ab76cf4b2ee90e057e1f59c62f659750';
+const LOGO_BLOB = 'dc230e1d9deab4db518f158007803f55';
 const PHOTOS = {
   '39c5a41fc65862158538a973e6970fb3': ['01_ujrakezdes_osveny', [480, 800, 1200], 1200, 1200],
   '4736fbc0446844dabffe1f7494f73b6a': ['02_csoportszoba', [480, 800, 1200, 1600], 1600, 900],

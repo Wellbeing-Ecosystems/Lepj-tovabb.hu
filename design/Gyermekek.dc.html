@@ -20,7 +20,7 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <header style="background: #FFFDF8; border-bottom: 1px solid #E8DFD0">
 <div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <a href="Main.dc.html" style="display: flex; align-items: center; text-decoration: none">
-<img src="/_blob/ab76cf4b2ee90e057e1f59c62f659750" alt="Lépj tovább! Válásfeldolgozó Csoport logó" style="height: 64px; width: auto">
+<img src="/_blob/dc230e1d9deab4db518f158007803f55" alt="Lépj tovább! Válásfeldolgozó Csoport logó" style="display: block; height: 72px; width: auto">
 </a>
 <nav aria-label="Főmenü" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 1rem">
 <a href="Main.dc.html" style="text-decoration: none; color: #33261C; padding: 10px 0">Főoldal</a>
@@ -60,7 +60,7 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #7A3E17">Milyen reakciók normálisak?</h2>
 <p style="margin: 0; color: #4A3A2D">A válást követő hetekben, hónapokban a gyerekek viselkedése gyakran megváltozik. Ez a legtöbbször nem baj jele, hanem az alkalmazkodásé.</p>
 </div>
-<ul style="flex: 2 1 560px; min-width: 0; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px">
+<ul style="flex: 2 1 560px; min-width: 0; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: 12px">
 <sc-for list="{{normal}}" as="n" hint-placeholder-count="6">
 <li style="background: #F8F4EC; border-radius: 16px; padding: 18px 20px; display: flex; gap: 12px; align-items: flex-start">
 <span aria-hidden="true" style="flex: none; margin-top: 10px; width: 8px; height: 8px; border-radius: 50%; background: #D9701C"></span>
@@ -76,7 +76,7 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 </section>
 
 <section id="kommunikacio" style="background: #F8F4EC">
-<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 18px">
 <div style="background: #FFFDF8; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 18px">
 <h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.9rem; line-height: 1.2; color: #4D6428">Hogyan kommunikáljunk a gyermekkel?</h2>
 <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
@@ -110,7 +110,7 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <p style="margin: 0; color: #4A3A2D">A gyereknek két otthona lehet, de egy biztonságos világra van szüksége. Ehhez nem kell barátnak lennetek – elég, ha szülőként kiszámíthatóan együtt tudtok működni.</p>
 <a href="Exkapcsolat.dc.html" style="align-self: flex-start; text-decoration: none; color: #7A3E17; font-family: 'Outfit', sans-serif; font-weight: 600; padding: 10px 0; border-bottom: 2px solid #D9701C">Kommunikáció az expartnerrel →</a>
 </div>
-<div style="flex: 2 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px">
+<div style="flex: 2 1 520px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: 14px">
 <sc-for list="{{coparent}}" as="c" hint-placeholder-count="4">
 <div style="background: #FFFDF8; border-radius: 18px; padding: 22px 24px; display: flex; flex-direction: column; gap: 6px">
 <span style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.15rem; color: #33261C">{{c.t}}</span>
@@ -127,7 +127,7 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #7A3E17">Életkor szerinti útmutató</h2>
 <p style="margin: 0; color: #4A3A2D">Minden gyerek más, ezért ezek irányok, nem szabályok.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 14px">
 <sc-for list="{{ages}}" as="a" hint-placeholder-count="5">
 <div style="background: #F8F4EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px; border-top: 6px solid {{a.c}}">
 <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.4rem; color: #33261C">{{a.age}}</span>
