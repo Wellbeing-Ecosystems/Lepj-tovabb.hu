@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<title>Lépj tovább! – Kinek szól?</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F8F4EC}
+a{color:#7A3E17}a:hover{color:#4F2810}
+</style>
+</helmet>
+<div style="font-family: 'Source Sans 3', sans-serif; color: #33261C; background: #F8F4EC; font-size: 1.125rem; line-height: 1.6">
+
+<header style="background: #FFFDF8; border-bottom: 1px solid #E8DFD0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="Main.dc.html" style="display: flex; align-items: center; text-decoration: none">
+<img src="/_blob/ab76cf4b2ee90e057e1f59c62f659750" alt="Lépj tovább! Válásfeldolgozó Csoport logó" style="height: 64px; width: auto">
+</a>
+<nav aria-label="Főmenü" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 1rem">
+<a href="Main.dc.html" style="text-decoration: none; color: #33261C; padding: 10px 0">Főoldal</a>
+<a href="Program.dc.html" style="text-decoration: none; color: #33261C; padding: 10px 0">A program</a>
+<a href="Kinekszol.dc.html" style="text-decoration: none; color: #7A3E17; border-bottom: 2px solid #D9701C; padding: 10px 0">Kinek szól?</a>
+<a href="Gyermekek.dc.html" style="text-decoration: none; color: #33261C; padding: 10px 0">Válás és gyermekek</a>
+<a href="Exkapcsolat.dc.html" style="text-decoration: none; color: #33261C; padding: 10px 0">Exkapcsolat</a>
+<a href="Rolam.dc.html" style="text-decoration: none; color: #33261C; padding: 10px 0">Rólam</a>
+<a href="Cikkek.dc.html" style="text-decoration: none; color: #33261C; padding: 10px 0">Cikkek</a>
+<a href="Jelentkezes.dc.html" style="text-decoration: none; color: #33261C; padding: 10px 0">GYIK</a>
+<a href="Jelentkezes.dc.html" style="text-decoration: none; background: #7A3E17; color: #FFFDF8; padding: 12px 22px; border-radius: 999px; font-weight: 600">Jelentkezés</a>
+</nav>
+</div>
+</header>
+
+<section style="background: #F8F4EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5F7A32">Kinek szól?</p>
+<h1 style="margin: 0; max-width: 900px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.08; color: #7A3E17">Válás után nem tudsz továbblépni?</h1>
+<p style="margin: 0; max-width: 680px; font-size: 1.2rem; color: #4A3A2D">Ha az alábbi mondatok közül valamelyik ismerősen cseng, nem vagy egyedül. Ezek a válás utáni időszak nagyon gyakori gondolatai – és mindegyikkel lehet dolgozni.</p>
+</div>
+<img src="/_blob/4910694a4839da9bde1e770afdd57ad1" alt="Középkorú férfi bögrével a kezében elgondolkodva néz ki lakása ablakán." style="display: block; flex: 1 1 420px; min-width: 0; max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px">
+</div>
+</section>
+
+<section style="background: #F8F4EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 96px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px">
+<sc-for list="{{situations}}" as="s" hint-placeholder-count="7">
+<div style="background: #FFFDF8; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.55rem; line-height: 1.25; color: {{s.c}}">{{s.q}}</p>
+<div style="height: 1px; background: #E8DFD0"></div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: #6B5A4C">Amiben a csoport segít</span>
+<span style="color: #4A3A2D">{{s.a}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #EEF0DF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: #4D6428">Őszintén</p>
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #33261C">Mikor nem a csoport az első lépés?</h2>
+</div>
+<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px; color: #4A3A2D">
+<p style="margin: 0">Ha jelenleg akut krízisben vagy, bántalmazó helyzetben élsz, vagy olyan erős a lehangoltságod, hogy a mindennapi teendők sem mennek, először egyéni szakmai segítség javasolt. A csoport később is ott lesz. A díjmentes konzultáción abban is segítünk, hogy megtaláld a számodra megfelelő támogatást.</p>
+<div style="background: #FFFDF8; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 600; color: #33261C">Ha most azonnal segítségre van szükséged</span>
+<span>Lelki Elsősegély Telefonszolgálat: <strong>116-123</strong> (ingyenesen hívható)</span>
+<span>Országos Kríziskezelő és Információs Telefonszolgálat (OKIT): <strong>06 80 205 520</strong></span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: #7A3E17">
+<div style="max-width: 1240px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 680px">
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.15; color: #FFFDF8">Magadra ismertél?</h2>
+<p style="margin: 0; font-size: 1.2rem; color: #F6E6D3">Beszéljük meg egy díjmentes konzultáción, hogy a Lépj tovább! neked való-e.</p>
+</div>
+<a href="Jelentkezes.dc.html" style="text-decoration: none; background: #F2B240; color: #33261C; padding: 16px 32px; border-radius: 999px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem">Időpontot foglalok</a>
+</div>
+</section>
+
+<footer style="background: #33261C; color: #E8DFD0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 1rem">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #FFFDF8">Lépj tovább!</span>
+<span>[E-mail cím] · [Telefonszám]</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2800}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+situations: [
+{ q: '„Még mindig rá gondolok.”', a: 'Megérteni, mit őrzöl még a kapcsolatból, és mit engedhetsz el belőle.', c: '#7A3E17' },
+{ q: '„Nem tudom elengedni.”', a: 'Az elengedés nem döntés, hanem folyamat. Lépésről lépésre, biztonságos térben dolgozunk rajta.', c: '#A9520E' },
+{ q: '„Haragszom rá.”', a: 'A harag fontos jelzés. Megtanulod úgy kezelni, hogy ne az irányítsa a mindennapjaidat.', c: '#4D6428' },
+{ q: '„Bűntudatom van.”', a: 'Különválasztjuk a felelősséget a bűntudattól: mi volt a te részed, és mi nem.', c: '#7A3E17' },
+{ q: '„A gyerekeim miatt még mindig kapcsolatban vagyunk.”', a: 'Működő közös szülőség – világos határokkal és kevesebb konfliktussal.', c: '#A9520E' },
+{ q: '„Félek az egyedülléttől.”', a: 'Az egyedüllét nem büntetés. Megtanulható, és idővel erőforrássá válhat.', c: '#4D6428' },
+{ q: '„Szeretnék új életet kezdeni.”', a: 'Új célok és jövőkép, amelyek már a te saját történetedre épülnek.', c: '#7A3E17' }
+]
+};
+}
+}
+</script>
+</body>
+</html>

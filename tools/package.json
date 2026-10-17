@@ -1,0 +1,11 @@
+{
+  "name": "lepj-tovabb-generator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node build.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Lépj tovább! – Válásfeldolgozó Csoport",
+  "short_name": "Lépj tovább!",
+  "lang": "hu",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F8F4EC",
+  "theme_color": "#7A3E17",
+  "icons": [
+    { "src": "/img/logo/apple-touch-icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/img/logo/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
