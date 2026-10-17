@@ -25,8 +25,8 @@ const PAGES = {
     desc: 'Hogyan segítheted a gyermekeidet a válás során? Normális reakciók, kommunikáció, közös szülőség és életkor szerinti útmutató.' },
   'Exkapcsolat.dc.html': { out: 'exkapcsolat.html', url: '/exkapcsolat', og: '05_hatizsak_atadas',
     desc: 'Válás utáni konfliktuskezelés, kommunikáció az expartnerrel, közös szülőség, határok és érzelmi leválás.' },
-  'Rolam.dc.html': { out: 'rolam.html', url: '/rolam', og: '09_oszi_erdo',
-    desc: 'Lovász Zoltán, a Lépj tovább! válásfeldolgozó csoport vezetője.' },
+  'Rolam.dc.html': { out: 'tanacsadoink.html', url: '/tanacsadoink', og: '09_oszi_erdo',
+    desc: 'Tímár Ildikó és Lovász Zoltán, a Lépj tovább! válásfeldolgozó csoport tanácsadói, oktatói – szakmai tudással és saját megélt tapasztalattal.' },
   'Cikkek.dc.html': { out: 'cikkek/index.html', url: '/cikkek', og: '06_no_tea_kanape',
     desc: 'Cikkek a válás feldolgozásáról, a gyermekekről, az újrakezdésről és a kapcsolatokról.' },
   'Jelentkezes.dc.html': { out: 'jelentkezes.html', url: '/jelentkezes', og: '10_tea_jegyzetfuzet',
@@ -52,6 +52,8 @@ const PHOTOS = {
   '0a65060a17e18288137496fdc65d3036': ['08_ferfi_kavezoban', [480, 800, 1200, 1600], 1600, 900],
   '790ace21a4fae73be49a2983f404daec': ['09_oszi_erdo', [480, 800, 1200], 1200, 900],
   '81901f754ca40ad00cc9be4eae17d687': ['10_tea_jegyzetfuzet', [480, 800, 960], 960, 1200],
+  '222d7212dd4bc3174039cddb5b0b6b5e': ['lovasz-zoltan', [480, 800, 960], 960, 1200, 'trenerek'],
+  'dcde4076c237454f7911dfae97495ca4': ['timar-ildiko', [480, 800, 960], 960, 1200, 'trenerek'],
 };
 const photoByStem = Object.fromEntries(Object.values(PHOTOS).map((p) => [p[0], p]));
 
@@ -116,12 +118,13 @@ function rewriteImg($, el) {
   }
   const p = PHOTOS[id];
   if (!p) throw new Error('Ismeretlen kép: ' + id);
-  const [stem, widths, w, h] = p;
+  const [stem, widths, w, h, dir = 'fotok'] = p;
   const max = widths[widths.length - 1];
-  $(el).attr('src', `/img/fotok/${stem}-${max >= 1200 ? 1200 : max}w.webp`);
-  $(el).attr('srcset', widths.map((x) => `/img/fotok/${stem}-${x}w.webp ${x}w`).join(', '));
+  $(el).attr('src', `/img/${dir}/${stem}-${max >= 1200 ? 1200 : max}w.webp`);
+  $(el).attr('srcset', widths.map((x) => `/img/${dir}/${stem}-${x}w.webp ${x}w`).join(', '));
   const style = $(el).attr('style') || '';
-  const sizes = /width: 100%; height: 180px/.test(style) ? '(max-width: 700px) 100vw, 300px'
+  const sizes = dir === 'trenerek' ? '(max-width: 700px) 90vw, 380px'
+    : /width: 100%; height: 180px/.test(style) ? '(max-width: 700px) 100vw, 300px'
     : /aspect-ratio: 16 \/ 9; object-fit: cover; border-radius: 24px/.test(style) ? '(max-width: 1100px) 100vw, 1052px'
     : '(max-width: 960px) 100vw, 50vw';
   $(el).attr('sizes', sizes).attr('width', String(w)).attr('height', String(h));

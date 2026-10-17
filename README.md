@@ -22,7 +22,7 @@ Statikus HTML-oldalak, külső keretrendszer nélkül. Vercelen futnak.
 | Kinek szól? | `/kinek-szol` |
 | Válás és gyermekek | `/valas-es-gyermekek` |
 | Továbblépés az exkapcsolatból | `/exkapcsolat` |
-| Rólam | `/rolam` |
+| Tanácsadóink | `/tanacsadoink` |
 | Cikkek | `/cikkek` |
 | GYIK és jelentkezés | `/jelentkezes` |
 | Cikk: Mennyi ideig tart a gyász? | `/cikkek/mennyi-ideig-tart-a-gyasz` |
@@ -39,8 +39,8 @@ Minden `main` ágra küldött módosítás után a Vercel automatikusan frissít
 
 ## Élesítés előtt
 
-- [ ] Kitölteni a szögletes zárójeles helyeket: `[E-mail cím]`, `[Telefonszám]`, `[Portréfotó]`, a saját történet, a végzettség, a GYIK-válaszok, a csoport létszáma, időpontja és helyszíne.
-- [ ] Valódi fotó: Zoltán portréja, csoportmunka, helyszín. A többi kép AI-illusztráció, nem valódi résztvevőket ábrázol.
+- [ ] Kitölteni a szögletes zárójeles helyeket: `[E-mail cím]`, `[Telefonszám]`, Lovász Zoltán bemutatkozása és szakmai megnevezése, a GYIK-válaszok, a csoport létszáma, időpontja és helyszíne.
+- [ ] Valódi fotó: csoportmunka, helyszín. A többi kép AI-illusztráció, nem valódi résztvevőket ábrázol.
 - [ ] Jelentkezési űrlap bekötése, pl. Formspree vagy Web3Forms. Jelenleg az űrlap nem küld semmit.
 - [ ] Adatkezelési tájékoztató és impresszum.
 - [ ] A segélyvonal-számok ellenőrzése: 116-123, 116-111, OKIT 06 80 205 520.
