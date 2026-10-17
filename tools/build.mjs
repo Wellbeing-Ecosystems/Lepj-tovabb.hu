@@ -16,7 +16,7 @@ const NOINDEX = true;
 
 const PAGES = {
   'Main.dc.html': { out: 'index.html', url: '/', og: '01_ujrakezdes_osveny',
-    desc: '12 alkalmas, zárt válásfeldolgozó és újratervező csoport: gyász, önismeret, konfliktuskezelés, gyermekek, új kapcsolatok és jövőépítés.' },
+    desc: '12 alkalmas válásfeldolgozó és újratervező csoport nyílt napokkal: gyász, önismeret, konfliktuskezelés, gyermekek, új kapcsolatok és jövőépítés.' },
   'Program.dc.html': { out: 'program.html', url: '/program', og: '02_csoportszoba',
     desc: 'A Lépj tovább! 12 alkalmas válásfeldolgozó program négy modulja: veszteség és gyász, önmagam újraértelmezése, kapcsolatok újrarendezése, újrakezdés.' },
   'Kinekszol.dc.html': { out: 'kinek-szol.html', url: '/kinek-szol', og: '03_ferfi_ablaknal',
