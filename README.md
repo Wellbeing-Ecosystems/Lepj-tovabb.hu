@@ -22,7 +22,7 @@ Statikus HTML-oldalak, külső keretrendszer nélkül. Vercelen futnak.
 | Kinek szól? | `/kinek-szol` |
 | Válás és gyermekek | `/valas-es-gyermekek` |
 | Továbblépés az exkapcsolatból | `/exkapcsolat` |
-| Tanácsadóink | `/tanacsadoink` |
+| Rólunk (koncepció, oktatók) | `/rolunk` |
 | Cikkek | `/cikkek` |
 | GYIK és jelentkezés | `/jelentkezes` |
 | Cikk: Mennyi ideig tart a gyász? | `/cikkek/mennyi-ideig-tart-a-gyasz` |
