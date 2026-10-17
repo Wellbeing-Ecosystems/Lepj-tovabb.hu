@@ -46,8 +46,8 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
 <sc-for list="{{faq}}" as="q" hint-placeholder-count="7">
 <details style="background: #F8F4EC; border-radius: 16px; padding: 4px 24px">
-<summary style="cursor: pointer; padding: 18px 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.15rem; color: #33261C">{{q}}</summary>
-<p style="margin: 0 0 20px; color: #6B5A4C">[Válasz szövege]</p>
+<summary style="cursor: pointer; padding: 18px 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.15rem; color: #33261C">{{q.q}}</summary>
+<p style="margin: 0 0 20px; color: #4A3A2D">{{q.a}}</p>
 </details>
 </sc-for>
 </div>
@@ -109,13 +109,14 @@ class Component extends DCLogic {
 renderVals() {
 return {
 faq: [
-'Mennyi idővel a válás után lehet csatlakozni?',
-'Akkor is jöhetek, ha én kezdeményeztem a válást?',
-'Mi történik egy alkalmon?',
-'Mennyire bizalmas a csoport?',
-'Mi van, ha hiányzom?',
-'Lehetek új kapcsolatban is?',
-'Milyen létszámú a csoport?'
+{ q: 'Mennyi idővel a válás után lehet csatlakozni?', a: '[Válasz szövege]' },
+{ q: 'Akkor is jöhetek, ha én kezdeményeztem a válást?', a: '[Válasz szövege]' },
+{ q: 'Mi történik egy alkalmon?', a: 'Egy alkalom kb. 90 perc: érkezőkör, rövid ismeretanyag a témáról, munkafüzetes gyakorlat, megosztás és zárókör. Nem kötelező megszólalni és nem kötelező megosztani semmit – mindenki a saját tempójában halad.' },
+{ q: 'Mennyire bizalmas a csoport?', a: 'A csoport bizalmi tér. Minden résztvevő vállalja, hogy az ott elhangzott személyes történeteket bizalmasan kezeli, és mások személyes adatait nem adja tovább. Kivételt csak az jelent, ha valakinek az élete vagy testi épsége közvetlen veszélyben van, illetve ha jogszabály jelzési kötelezettséget ír elő.' },
+{ q: 'Mi van, ha hiányzom?', a: 'Semmi gond. A csoport nyitott, minden alkalom önálló egység, így a következő alkalommal ugyanúgy be tudsz kapcsolódni.' },
+{ q: 'Ez terápia?', a: 'Nem. A csoport önismereti és edukációs jellegű, támogató közösség. Nem minősül pszichoterápiának vagy egészségügyi ellátásnak, és nem helyettesít jogi vagy pénzügyi tanácsadást.' },
+{ q: 'Lehetek új kapcsolatban is?', a: '[Válasz szövege]' },
+{ q: 'Milyen létszámú a csoport?', a: '[Válasz szövege]' }
 ]
 };
 }

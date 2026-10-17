@@ -54,16 +54,55 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #33261C">A veszteségtől az újrakezdésig</h2>
 </div>
 <div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; color: #4A3A2D">
-<p style="margin: 0">A válással nemcsak egy kapcsolat ér véget. Gyakran elveszik a biztonságérzet, a közös jövőkép, az addigi identitás és a megszokott életforma is. A legtöbb válásfeldolgozó program a veszteségre fókuszál – mi egy lépéssel tovább megyünk.</p>
-<p style="margin: 0">A Lépj tovább! egy 12 alkalmas csoport, amely a teljes feldolgozási ívet végigjárja: a gyásztól és a haragtól az önismereten, a konfliktuskezelésen és a gyerekek helyzetén át egészen az új kapcsolatokig és a jövőképig. Nem azt keressük, mi romlott el vagy ki hibázott, hanem azt, ami már most is működik, és amire építeni lehet.</p>
+<p style="margin: 0">A válással nemcsak egy kapcsolat ér véget. Elveszhet a közös jövőkép, a családról alkotott kép, a korábbi szerepeink, a biztonságérzet és a mindennapi rutin is. Amit ilyenkor átélünk, az nem gyengeség, hanem természetes gyászfolyamat – és a gyász célja nem a felejtés, hanem az alkalmazkodás és új jelentések kialakítása.</p>
+<p style="margin: 0">A Lépj tovább! <strong style="color: #33261C">nyitott csoport</strong>: bármelyik alkalomhoz csatlakozhatsz, mert minden alkalom önálló egység, és nem feltételez előzetes tudást. A 12 alkalom témái együtt a teljes utat lefedik – a veszteségtől és az identitás kérdéseitől a gyerekeken és az új kapcsolatokon át a jövőképig.</p>
 <p style="margin: 0">A csoportban közösen dolgozunk azon, hogy a magunkra vagy a másikra aggatott negatív címkéket átkeretezzük, és meglássuk azt is, mit nyerhetünk ezzel a folyamattal – nem csak azt, mit veszítettünk.</p>
+</div>
+<div style="flex: 1 1 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 16px">
+<div style="background: #EEF0DF; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.3rem; color: #4D6428">A csoport célja</span>
+<ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; color: #33261C">
+<li>az érzelmi feldolgozás támogatása</li>
+<li>az önismereti fejlődés elősegítése</li>
+<li>a saját erőforrások mozgósítása</li>
+<li>a veszteség beépítése az élettörténetbe</li>
+<li>az újrakezdés támogatása</li>
+</ul>
+</div>
+<div style="background: #FBEBD6; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.3rem; color: #A9520E">Amire nem vállalkozunk</span>
+<ul style="margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; color: #33261C">
+<li>a válás gyors „feldolgoztatása”</li>
+<li>a kibékülés elősegítése</li>
+<li>tanácsadás arról, mit tegyél</li>
+<li>mediáció a volt pároddal</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background: #F8F4EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<p style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5F7A32">Integrál szemlélet</p>
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #33261C">A válás négy irányból érint – mi mind a négyre figyelünk</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 14px">
+<sc-for list="{{dims}}" as="d" hint-placeholder-count="4">
+<div style="background: #FFFDF8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 8px; border-top: 5px solid {{d.c}}">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.25rem; color: #33261C">{{d.t}}</span>
+<span style="color: #4A3A2D">{{d.d}}</span>
+<span style="margin-top: 4px; font-style: italic; color: #6B5A4C">{{d.q}}</span>
+</div>
+</sc-for>
 </div>
 </div>
 </section>
 
 <section style="background: #EEF0DF">
 <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 36px">
-<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #33261C">Amiben hiszünk</h2>
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #33261C">Biztonságos keretek</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 16px">
 <sc-for list="{{values}}" as="v" hint-placeholder-count="4">
 <div style="background: #FFFDF8; border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
@@ -91,6 +130,10 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 </sc-for>
 </ol>
 <p style="margin: 0; color: #4A3A2D">A csoportot nyílt napokon kötelezettség nélkül is megismerheted. A következő nyílt nap: <strong>[dátum, helyszín]</strong>.</p>
+<div style="background: #F8F4EC; border-radius: 18px; padding: 22px 26px; display: flex; flex-direction: column; gap: 6px; font-size: 1rem; color: #4A3A2D">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.05rem; color: #33261C">Fontos tudni</span>
+<span>A csoport önismereti és edukációs jellegű, támogató közösség. Nem minősül egészségügyi ellátásnak vagy pszichoterápiának, és nem helyettesít orvosi, jogi vagy pénzügyi tanácsadást. Akut lelki krízis, önsértő gondolatok vagy aktuális bántalmazás esetén először egyéni szakmai segítség javasolt – a díjmentes konzultáción ebben is segítünk eligazodni.</span>
+</div>
 </div>
 </section>
 
@@ -168,21 +211,27 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
 class Component extends DCLogic {
 renderVals() {
 return {
 values: [
-{ n: '01', t: 'Biztonságos tér', d: 'Ítélkezésmentes közeg, ahol kimondhatod, ami benned zajlik – és ahol nem kell egyedül végigmenned az úton.', c: '#9A4E1C' },
-{ n: '02', t: 'Erőforrásokra építünk', d: 'Nem a hibást keressük, hanem azt, ami már most is működik, és amire építeni lehet.', c: '#C25F12' },
-{ n: '03', t: 'Rendszerben gondolkodunk', d: 'A válás érinti a gyerekeket, a családot, a barátokat és az exkapcsolatot is – ezekkel együtt foglalkozunk.', c: '#6E8B3D' },
-{ n: '04', t: 'Szakmaiság és emberség', d: 'Szakmai háttérrel érkezünk, de nem kívülről mondjuk meg, mi a helyes – veled együtt keressük a következő lépést.', c: '#4D6428' }
+{ n: '01', t: 'Titoktartás', d: 'A csoportban megosztott személyes történetek bizalmasak. Amit ott hallunk, azt nem visszük tovább – ezt minden résztvevő vállalja.', c: '#9A4E1C' },
+{ n: '02', t: 'Önkéntesség', d: 'Nem kötelező megszólalni, és nem kötelező megosztani egy gyakorlatot sem. Mindenki a saját tempójában halad.', c: '#C25F12' },
+{ n: '03', t: 'Egymás tisztelete', d: 'Nincs tanácsosztás, ítélkezés, diagnosztizálás és hibáztatás. Saját élményeinkről beszélünk.', c: '#6E8B3D' },
+{ n: '04', t: 'Érzelmi biztonság', d: 'A csoportvezetők végig figyelnek arra, hogy senki ne maradjon egyedül, ha egy érzés túl erősnek bizonyul.', c: '#4D6428' }
+],
+dims: [
+{ t: 'Belső élmények', d: 'Érzések, gondolatok, szükségletek és az, amit a veszteség számunkra jelent.', q: '„Mit élek át most belül?”', c: '#9A4E1C' },
+{ t: 'Viselkedés', d: 'Megküzdési módok, szokások, döntések – alvás, étkezés, napi rutin.', q: '„Hogyan próbálom kezelni?”', c: '#C25F12' },
+{ t: 'Kapcsolatok', d: 'Az expartner, a gyerekek, a család, a barátok és az új kapcsolatok.', q: '„Mi történik a kapcsolataimban?”', c: '#6E8B3D' },
+{ t: 'Élethelyzet', d: 'Lakhatás, pénzügyek, munka, jogi helyzet és jövőtervek.', q: '„Ez hogyan hat a mindennapjaimra?”', c: '#4D6428' }
 ],
 stages: [
-{ t: 'I. Megérkezés', d: 'Biztonság. Bizalom. Történet.', c: '#9A4E1C' },
-{ t: 'II. Szembenézés', d: 'Gyász. Harag. Bűntudat. Felelősség.', c: '#C25F12' },
-{ t: 'III. Újrarendeződés', d: 'Kapcsolatok. Identitás. Önbecsülés.', c: '#6E8B3D' },
-{ t: 'IV. Folytatás', d: 'Elengedés. Újratervezés. Jövőkép.', c: '#4D6428' }
+{ t: 'I. Megérkezés', d: 'Veszteség és gyász · Identitás és önértékelés · Harag, bűntudat, szégyen', c: '#9A4E1C' },
+{ t: 'II. Szembenézés', d: 'Elengedés vagy ragaszkodás · Konfliktusok az expartnerrel · Gyerekek a válásban', c: '#C25F12' },
+{ t: 'III. Újrarendeződés', d: 'Család és barátok · Magány és újrakezdés · Új kapcsolatok, bizalom', c: '#6E8B3D' },
+{ t: 'IV. Folytatás', d: 'Öngondoskodás · Mit tanultam ebből? · Újratervezés és jövőkép', c: '#4D6428' }
 ]
 };
 }

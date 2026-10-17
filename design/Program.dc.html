@@ -41,7 +41,7 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <p style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: #4D6428">A program</p>
 <h1 style="margin: 0; max-width: 860px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(2.2rem, 4.5vw, 3.6rem); line-height: 1.1; color: #33261C">A 12 alkalmas válásfeldolgozó program</h1>
-<p style="margin: 0; max-width: 720px; font-size: 1.2rem; color: #4A3A2D">A program célja, hogy végigvezessen a válás érzelmi folyamatán, miközben fokozatosan visszaépíted az önbizalmadat, az önazonosságodat és a jövőbe vetett bizalmadat.</p>
+<p style="margin: 0; max-width: 720px; font-size: 1.2rem; color: #4A3A2D">A program célja, hogy végigvezessen a válás érzelmi folyamatán, miközben fokozatosan visszaépíted az önbizalmadat, az önazonosságodat és a jövőbe vetett bizalmadat. A csoport nyitott: bármelyik alkalomhoz csatlakozhatsz.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 12px">
 <sc-for list="{{facts}}" as="f" hint-placeholder-count="4">
 <div style="display: flex; flex-direction: column; background: #FFFDF8; border-radius: 16px; padding: 14px 20px; min-width: 180px">
@@ -55,8 +55,30 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 </div>
 </section>
 
+<section style="background: #FFFDF8">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase; color: #A9520E">Nyitott csoport</p>
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #33261C">Nem kell az elején kezdened</h2>
+<p style="margin: 0; color: #4A3A2D">Minden alkalom önálló egység, és nem feltételez előzetes tudást. Az alkalmak elején mindig röviden felidézzük a kereteket, az új résztvevőket pedig külön is köszöntjük. Minden alkalomhoz munkafüzet tartozik, saját gyakorlatokkal és otthoni feladatokkal.</p>
+</div>
+<div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.4rem; color: #33261C">Egy alkalom menete</h3>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+<li style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; background: #F8F4EC; border-radius: 16px; padding: 16px 20px">
+<span style="flex: 0 0 96px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; color: #A9520E">{{s.m}}</span>
+<span style="flex: 1 1 220px; min-width: 0"><strong style="font-family: 'Outfit', sans-serif; color: #33261C">{{s.t}}</strong> – {{s.d}}</span>
+</li>
+</sc-for>
+</ol>
+</div>
+</div>
+</section>
+
 <section style="background: #F8F4EC">
 <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 22px">
+<h2 style="margin: 0 0 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #33261C">A 12 alkalom témái</h2>
 <sc-for list="{{modules}}" as="m" hint-placeholder-count="4">
 <article style="display: flex; flex-wrap: wrap; gap: 28px 56px; background: #FFFDF8; border-radius: 24px; padding: 40px">
 <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
@@ -96,22 +118,29 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3400}}'>
 class Component extends DCLogic {
 renderVals() {
 return {
 facts: [
-{ k: 'Időtartam', v: '12 alkalom' },
-{ k: 'Forma', v: 'Csoport, nyílt napokkal' },
+{ k: 'Időtartam', v: '12 alkalom, kb. 90 perc' },
+{ k: 'Forma', v: 'Nyitott csoport, nyílt napokkal' },
 { k: 'Következő nyílt nap', v: '[dátum, helyszín]' },
-{ k: 'Csoportlétszám', v: '[max. X fő]' },
-{ k: 'Következő indulás', v: '[dátum, helyszín]' }
+{ k: 'Alkalmak ideje', v: '[nap, időpont, helyszín]' },
+{ k: 'Csoportlétszám', v: '[max. X fő]' }
+],
+steps: [
+{ m: '15 perc', t: 'Érkezőkör', d: 'kapcsolódás, hogy ki milyen állapotban érkezett' },
+{ m: '15–20 perc', t: 'Pszichoedukáció', d: 'rövid ismeretanyag, amely normalizál és új nézőpontot ad' },
+{ m: '20–25 perc', t: 'Integrál gyakorlat', d: 'önreflexió és belső munka a munkafüzettel' },
+{ m: '20–25 perc', t: 'Megosztás', d: 'kapcsolódás, tükrözés, egymástól tanulás – csak annyit, amennyit szeretnél' },
+{ m: '10 perc', t: 'Zárókör', d: '„Mit viszek magammal?”' }
 ],
 modules: [
-{ n: 'Modul 1', s: 'Megérkezés', t: 'Veszteség és gyász', d: 'Amikor végre kimondhatod, mi történt veled.', c: '#9A4E1C', items: ['Mit veszítettél valójában?', 'A gyász természetes folyamata', 'Érzelmek felismerése'] },
-{ n: 'Modul 2', s: 'Szembenézés', t: 'Önmagam újraértelmezése', d: 'Ki vagyok én a kapcsolaton túl?', c: '#C25F12', items: ['Identitásvesztés', 'Önbecsülés', 'Belső erőforrások'] },
-{ n: 'Modul 3', s: 'Újrarendeződés', t: 'Kapcsolatok újrarendezése', d: 'Rend a múltban, hogy legyen hely a jövőnek.', c: '#5F7A32', items: ['Expartnerrel való kapcsolat', 'Határok', 'Konfliktuskezelés'] },
-{ n: 'Modul 4', s: 'Folytatás', t: 'Újrakezdés', d: 'Új célok, új kapcsolatok, új jövőkép.', c: '#4D6428', items: ['Magány kezelése', 'Új célok', 'Új kapcsolatok', 'Jövőkép'] }
+{ n: 'I.', s: '1–3. alkalom', t: 'Megérkezés', d: 'A veszteség megnevezése és az önkép újragondolása.', c: '#9A4E1C', items: ['1. A kapcsolat vége mint veszteség – a válás gyászfolyamata', '2. Identitás és önértékelés a kapcsolat után', '3. Harag, bűntudat és szégyen'] },
+{ n: 'II.', s: '4–6. alkalom', t: 'Szembenézés', d: 'Ami még köt, és ami a kapcsolat után is megmarad.', c: '#C25F12', items: ['4. Elengedés vagy ragaszkodás', '5. Konfliktusok az expartnerrel: határok, kommunikáció, játszmák', '6. Gyerekek a válásban'] },
+{ n: 'III.', s: '7–9. alkalom', t: 'Újrarendeződés', d: 'Kapcsolódás másokhoz – és önmagunkhoz.', c: '#5F7A32', items: ['7. Család és barátok szerepe', '8. Magány és újrakezdés', '9. Új kapcsolatok, bizalom és visszatérő minták'] },
+{ n: 'IV.', s: '10–12. alkalom', t: 'Folytatás', d: 'Gondoskodás magunkról, tanulságok és jövőkép.', c: '#4D6428', items: ['10. Öngondoskodás, stresszkezelés és test-lélek kapcsolat', '11. Mit tanultam ebből a kapcsolatból?', '12. Újratervezés, jövőkép és remény'] }
 ]
 };
 }
