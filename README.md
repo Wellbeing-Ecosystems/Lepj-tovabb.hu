@@ -42,7 +42,8 @@ Minden `main` ágra küldött módosítás után a Vercel automatikusan frissít
 
 ## Élesítés előtt
 
-- [ ] Kezdési időpont, részvételi díj, fizetési mód, lemondási szabályok (Program oldal, ÁSZF 6–7. és 11. pont).
+- [ ] Fizetési mód, ÁFA-kezelés, lemondás nélküli távolmaradás szabálya (ÁSZF 6–7. pont).
+- [ ] A hello@lepj-tovabb.hu levelezés szolgáltatója (adatfeldolgozóként az adatkezelési tájékoztatóba).
 - [ ] 4 GYIK-válasz.
 - [ ] Bevétel.hu: az űrlap beágyazási címe (`BEVETEL_URL` a `tools/build.mjs`-ben), valamint a Bevétel.hu üzemeltetőjének cégneve és székhelye az adatkezelési tájékoztatóhoz.
 - [ ] Könyvelő / számlázóprogram az adatfeldolgozók között.
