@@ -15,7 +15,7 @@ const SITE_URL = 'https://lepj-tovabb.hu';
 const NOINDEX = true;
 // A Bevétel.hu jelentkezési űrlap beágyazási címe (pl. https://bevetel.hu/intrest?id=...&lang=hu).
 // Amíg üres, a terv saját (nem küldő) űrlapja látszik.
-const BEVETEL_URL = '';
+const BEVETEL_URL = 'https://bevetel.hu/intrest?id=5c42f2d626098559&lang=hu';
 const FONT_HEAD = '<link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="stylesheet" href="/fonts/fonts.css">';
 const LEGAL_LINKS = '<nav aria-label="Jogi információk" class="legal-links"><a href="/adatkezeles">Adatkezelési tájékoztató</a><a href="/aszf">ÁSZF</a><a href="/impresszum">Impresszum</a></nav>';
 let SHELL = null; // a főoldal fejléce és lábléce a jogi oldalakhoz
