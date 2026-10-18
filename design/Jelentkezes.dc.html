@@ -87,8 +87,12 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <textarea id="uzenet" rows="5" style="font: inherit; padding: 14px 16px; border: 1.5px solid #CFC3AF; border-radius: 12px; background: #FFFDF8; color: #33261C; resize: vertical"></textarea>
 </div>
 <label style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: #4A3A2D">
+<input type="checkbox" required style="width: 22px; height: 22px; margin: 2px 0 0; accent-color: #7A3E17; flex: none">
+<span>Elolvastam az <a href="/adatkezeles">adatkezelési tájékoztatót</a> és az <a href="/aszf">ÁSZF-et</a>, és hozzájárulok, hogy az általam megadott adatokat a jelentkezésem kezelése céljából kezeljék.</span>
+</label>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: #4A3A2D">
 <input type="checkbox" style="width: 22px; height: 22px; margin: 2px 0 0; accent-color: #7A3E17; flex: none">
-<span>Elolvastam és elfogadom az <a href="#">adatkezelési tájékoztatót</a>.</span>
+<span>Feliratkozom a hírlevélre – értesítést kérek az új alkalmakról és cikkekről. (Nem kötelező, bármikor leiratkozhatok.)</span>
 </label>
 <button type="button" style="align-self: flex-start; font: inherit; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; background: #7A3E17; color: #FFFDF8; border: 0; border-radius: 999px; padding: 16px 34px; cursor: pointer">Időpontot foglalok</button>
 </form>
@@ -98,7 +102,7 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <footer style="background: #33261C; color: #E8DFD0">
 <div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 1rem">
 <span style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #FFFDF8">Lépj tovább!</span>
-<span>[E-mail cím] · [Telefonszám]</span>
+<span>hello@lepj-tovabb.hu · +36 20 291 0852</span>
 </div>
 </footer>
 
@@ -111,9 +115,10 @@ return {
 faq: [
 { q: 'Mennyi idővel a válás után lehet csatlakozni?', a: '[Válasz szövege]' },
 { q: 'Akkor is jöhetek, ha én kezdeményeztem a válást?', a: '[Válasz szövege]' },
-{ q: 'Mi történik egy alkalmon?', a: 'Egy alkalom kb. 90 perc: érkezőkör, rövid ismeretanyag a témáról, munkafüzetes gyakorlat, megosztás és zárókör. Nem kötelező megszólalni és nem kötelező megosztani semmit – mindenki a saját tempójában halad.' },
+{ q: 'Mi történik egy alkalmon?', a: 'Egy alkalom 120 perc (18:30–20:30): érkezőkör, rövid ismeretanyag a témáról, munkafüzetes gyakorlat, megosztás és zárókör. Nem kötelező megszólalni és nem kötelező megosztani semmit – mindenki a saját tempójában halad.' },
 { q: 'Mennyire bizalmas a csoport?', a: 'A csoport bizalmi tér. Minden résztvevő vállalja, hogy az ott elhangzott személyes történeteket bizalmasan kezeli, és mások személyes adatait nem adja tovább. Kivételt csak az jelent, ha valakinek az élete vagy testi épsége közvetlen veszélyben van, illetve ha jogszabály jelzési kötelezettséget ír elő.' },
 { q: 'Mi van, ha hiányzom?', a: 'Semmi gond. A csoport nyitott, minden alkalom önálló egység, így a következő alkalommal ugyanúgy be tudsz kapcsolódni.' },
+{ q: 'Mennyibe kerül, és hogyan kell fizetni?', a: 'A részvételi díj 8 500 Ft alkalmanként, amelyet az alkalom után kell kifizetni. A díjmentes konzultáció ingyenes. Ha nem tudsz eljönni, kérjük, legalább 24 órával előtte jelezd.' },
 { q: 'Ez terápia?', a: 'Nem. A csoport önismereti és edukációs jellegű, támogató közösség. Nem minősül pszichoterápiának vagy egészségügyi ellátásnak, és nem helyettesít jogi vagy pénzügyi tanácsadást.' },
 { q: 'Lehetek új kapcsolatban is?', a: '[Válasz szövege]' },
 { q: 'Milyen létszámú a csoport?', a: '[Válasz szövege]' }

@@ -20,8 +20,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32.png">
 <link rel="apple-touch-icon" href="/img/logo/apple-touch-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -30,6 +30,8 @@ body{margin:0;background:#F8F4EC}
 a{color:#7A3E17}a:hover{color:#4F2810}
 summary::-webkit-details-marker{color:#7A3E17}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #D9701C;outline-offset:3px}
+.legal-links{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:20px;border-top:1px solid rgba(232,223,208,.25);font-size:.95rem}
+.legal-links a{color:#E8DFD0}
 .menu-btn{display:none;align-items:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid #CFC3AF;border-radius:999px;background:#FFFDF8;color:#33261C;font:600 1rem 'Outfit',sans-serif;cursor:pointer}
 @media (max-width: 1080px){
   .menu-btn{display:inline-flex}
@@ -83,7 +85,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 
 <details style="background: #F8F4EC; border-radius: 16px; padding: 4px 24px">
 <summary style="cursor: pointer; padding: 18px 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.15rem; color: #33261C">Mi történik egy alkalmon?</summary>
-<p style="margin: 0 0 20px; color: #4A3A2D">Egy alkalom kb. 90 perc: érkezőkör, rövid ismeretanyag a témáról, munkafüzetes gyakorlat, megosztás és zárókör. Nem kötelező megszólalni és nem kötelező megosztani semmit – mindenki a saját tempójában halad.</p>
+<p style="margin: 0 0 20px; color: #4A3A2D">Egy alkalom 120 perc (18:30–20:30): érkezőkör, rövid ismeretanyag a témáról, munkafüzetes gyakorlat, megosztás és zárókör. Nem kötelező megszólalni és nem kötelező megosztani semmit – mindenki a saját tempójában halad.</p>
 </details>
 
 <details style="background: #F8F4EC; border-radius: 16px; padding: 4px 24px">
@@ -94,6 +96,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 <details style="background: #F8F4EC; border-radius: 16px; padding: 4px 24px">
 <summary style="cursor: pointer; padding: 18px 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.15rem; color: #33261C">Mi van, ha hiányzom?</summary>
 <p style="margin: 0 0 20px; color: #4A3A2D">Semmi gond. A csoport nyitott, minden alkalom önálló egység, így a következő alkalommal ugyanúgy be tudsz kapcsolódni.</p>
+</details>
+
+<details style="background: #F8F4EC; border-radius: 16px; padding: 4px 24px">
+<summary style="cursor: pointer; padding: 18px 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.15rem; color: #33261C">Mennyibe kerül, és hogyan kell fizetni?</summary>
+<p style="margin: 0 0 20px; color: #4A3A2D">A részvételi díj 8 500 Ft alkalmanként, amelyet az alkalom után kell kifizetni. A díjmentes konzultáció ingyenes. Ha nem tudsz eljönni, kérjük, legalább 24 órával előtte jelezd.</p>
 </details>
 
 <details style="background: #F8F4EC; border-radius: 16px; padding: 4px 24px">
@@ -128,40 +135,16 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 </div>
 <img src="/img/fotok/10_tea_jegyzetfuzet-960w.webp" alt="Két bögre tea és nyitott jegyzetfüzet egy faasztalon, növényekkel teli ablak mellett." style="display: block; width: 100%; max-width: 380px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; margin-top: 12px" srcset="/img/fotok/10_tea_jegyzetfuzet-480w.webp 480w, /img/fotok/10_tea_jegyzetfuzet-800w.webp 800w, /img/fotok/10_tea_jegyzetfuzet-960w.webp 960w" sizes="(max-width: 960px) 100vw, 50vw" width="960" height="1200" fetchpriority="high" decoding="async">
 </div>
-<form style="flex: 1 1 480px; min-width: 0; background: #FFFDF8; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 6px">
-<label for="nev" style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem">Név</label>
-<input id="nev" type="text" autocomplete="name" style="font: inherit; padding: 14px 16px; border: 1.5px solid #CFC3AF; border-radius: 12px; background: #FFFDF8; color: #33261C">
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px">
-<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<label for="email" style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem">E-mail</label>
-<input id="email" type="email" autocomplete="email" style="font: inherit; padding: 14px 16px; border: 1.5px solid #CFC3AF; border-radius: 12px; background: #FFFDF8; color: #33261C">
-</div>
-<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<label for="tel" style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem">Telefonszám</label>
-<input id="tel" type="tel" autocomplete="tel" style="font: inherit; padding: 14px 16px; border: 1.5px solid #CFC3AF; border-radius: 12px; background: #FFFDF8; color: #33261C">
-</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<label for="uzenet" style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem">Rövid üzenet</label>
-<textarea id="uzenet" rows="5" style="font: inherit; padding: 14px 16px; border: 1.5px solid #CFC3AF; border-radius: 12px; background: #FFFDF8; color: #33261C; resize: vertical"></textarea>
-</div>
-<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: #4A3A2D">
-<input type="checkbox" style="width: 22px; height: 22px; margin: 2px 0 0; accent-color: #7A3E17; flex: none">
-<span>Elolvastam és elfogadom az <a href="#">adatkezelési tájékoztatót</a>.</span>
-</label>
-<button type="button" style="align-self: flex-start; font: inherit; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; background: #7A3E17; color: #FFFDF8; border: 0; border-radius: 999px; padding: 16px 34px; cursor: pointer">Időpontot foglalok</button>
-</form>
+<div style="flex: 1 1 480px; min-width: 0; background: #FFFDF8; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 10px"><iframe src="https://bevetel.hu/intrest?id=5c42f2d626098559&amp;lang=hu" title="Jelentkezés – Lépj tovább!" width="100%" height="640" loading="lazy" style="border: none; background: transparent"></iframe><p style="margin: 0 12px 8px; font-size: 0.95rem; color: #4A3A2D">Az űrlap elküldésével elfogadod az <a href="/adatkezeles">adatkezelési tájékoztatót</a> és az <a href="/aszf">ÁSZF-et</a>.</p></div>
 </div>
 </section>
 
 <footer style="background: #33261C; color: #E8DFD0">
 <div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 1rem">
 <span style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #FFFDF8">Lépj tovább!</span>
-<span>[E-mail cím] · [Telefonszám]</span>
+<span>hello@lepj-tovabb.hu · +36 20 291 0852</span>
 </div>
-</footer>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 32px"><nav aria-label="Jogi információk" class="legal-links"><a href="/adatkezeles">Adatkezelési tájékoztató</a><a href="/aszf">ÁSZF</a><a href="/impresszum">Impresszum</a></nav></div></footer>
 
 </div>
 <script>
