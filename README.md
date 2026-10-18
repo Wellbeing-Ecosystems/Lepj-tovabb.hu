@@ -39,7 +39,7 @@ Minden `main` ágra küldött módosítás után a Vercel automatikusan frissít
 
 ## Élesítés előtt
 
-- [ ] Kitölteni a szögletes zárójeles helyeket: `[E-mail cím]`, `[Telefonszám]`, Lovász Zoltán bemutatkozása és szakmai megnevezése, a GYIK-válaszok, a csoport létszáma, időpontja és helyszíne.
+- [ ] Kitölteni a szögletes zárójeles helyeket: `[E-mail cím]`, `[Telefonszám]`, a hiányzó GYIK-válaszok, a csoport létszáma, időpontja és helyszíne.
 - [ ] Valódi fotó: csoportmunka, helyszín. A többi kép AI-illusztráció, nem valódi résztvevőket ábrázol.
 - [ ] Jelentkezési űrlap bekötése, pl. Formspree vagy Web3Forms. Jelenleg az űrlap nem küld semmit.
 - [ ] Adatkezelési tájékoztató és impresszum.
