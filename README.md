@@ -42,7 +42,7 @@ Minden `main` ágra küldött módosítás után a Vercel automatikusan frissít
 
 ## Élesítés előtt
 
-- [ ] Fizetési mód, ÁFA-kezelés, lemondás nélküli távolmaradás szabálya (ÁSZF 6–7. pont).
+- [ ] Fizetési mód és a lemondás nélküli távolmaradás szabálya (ÁSZF 6–7. pont).
 - [ ] A hello@lepj-tovabb.hu levelezés szolgáltatója (adatfeldolgozóként az adatkezelési tájékoztatóba).
 - [ ] 4 GYIK-válasz.
 - [x] Bevétel.hu űrlap beágyazva (`BEVETEL_URL` a `tools/build.mjs`-ben).
