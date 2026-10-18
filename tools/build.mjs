@@ -13,6 +13,12 @@ const SITE = path.join(ROOT, 'site');
 const SITE_URL = 'https://lepj-tovabb.hu';
 // Amíg a helykitöltők ([...]) benne vannak, a keresők ne indexeljék az oldalt.
 const NOINDEX = true;
+// A Bevétel.hu jelentkezési űrlap beágyazási címe (pl. https://bevetel.hu/intrest?id=...&lang=hu).
+// Amíg üres, a terv saját (nem küldő) űrlapja látszik.
+const BEVETEL_URL = '';
+const FONT_HEAD = '<link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="stylesheet" href="/fonts/fonts.css">';
+const LEGAL_LINKS = '<nav aria-label="Jogi információk" class="legal-links"><a href="/adatkezeles">Adatkezelési tájékoztató</a><a href="/aszf">ÁSZF</a><a href="/impresszum">Impresszum</a></nav>';
+let SHELL = null; // a főoldal fejléce és lábléce a jogi oldalakhoz
 
 const PAGES = {
   'Main.dc.html': { out: 'index.html', url: '/', og: '01_ujrakezdes_osveny',
@@ -144,7 +150,7 @@ function build(file) {
   const vals = new Component().renderVals() || {};
 
   const helmet = $('x-dc > helmet');
-  const fontLinks = helmet.find('link').toArray().map((l) => $.html(l)).join('\n');
+  const fontLinks = FONT_HEAD;
   const css = helmet.find('style').text().trim();
   helmet.remove();
 
@@ -161,6 +167,15 @@ function build(file) {
   mainNav.attr('id', 'fomenu');
   mainNav.parent().addClass('site-header');
   mainNav.before(`<button type="button" class="menu-btn" aria-expanded="false" aria-controls="fomenu" aria-label="Menü megnyitása"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><span>Menü</span></button>`);
+  $(xdc).find('footer').each((_, f) => {
+    if (!$(f).find('a[href="/impresszum"]').length) $(f).append(`<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 32px">${LEGAL_LINKS}</div>`);
+  });
+  if (BEVETEL_URL && file === 'Jelentkezes.dc.html') {
+    $(xdc).find('form').replaceWith(`<div style="flex: 1 1 480px; min-width: 0; background: #FFFDF8; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 10px"><iframe src="${BEVETEL_URL}" title="Jelentkezés – Lépj tovább!" width="100%" height="640" loading="lazy" style="border: none; background: transparent"></iframe><p style="margin: 0 12px 8px; font-size: 0.95rem; color: #4A3A2D">Az űrlap elküldésével elfogadod az <a href="/adatkezeles">adatkezelési tájékoztatót</a> és az <a href="/aszf">ÁSZF-et</a>.</p></div>`);
+  }
+  if (file === 'Main.dc.html') {
+    SHELL = { header: $.html($(xdc).find('header').first()), footer: $.html($(xdc).find('footer').first()), css, fontLinks };
+  }
   const body = $(xdc).html().trim();
 
   const og = photoByStem[meta.og];
@@ -194,6 +209,8 @@ img{max-width:100%;height:auto}
 ${css}
 summary::-webkit-details-marker{color:#7A3E17}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #D9701C;outline-offset:3px}
+.legal-links{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:20px;border-top:1px solid rgba(232,223,208,.25);font-size:.95rem}
+.legal-links a{color:#E8DFD0}
 .menu-btn{display:none;align-items:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid #CFC3AF;border-radius:999px;background:#FFFDF8;color:#33261C;font:600 1rem 'Outfit',sans-serif;cursor:pointer}
 @media (max-width: 1080px){
   .menu-btn{display:inline-flex}
@@ -220,3 +237,44 @@ b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttr
 }
 
 for (const f of Object.keys(PAGES)) build(f);
+
+// Jogi oldalak: a design/jogi/*.html tartalmát a főoldal fejlécével és láblécével csomagoljuk be.
+const LEGAL_CSS = `.legal{max-width:820px;margin:0 auto;padding:64px 24px 88px;color:#33261C}
+.legal h1{margin:0 0 12px;font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(2rem,4.5vw,3rem);line-height:1.12;color:#7A3E17}
+.legal h2{margin:44px 0 12px;font-family:'Outfit',sans-serif;font-weight:700;font-size:1.45rem;color:#33261C}
+.legal h3{margin:28px 0 8px;font-family:'Outfit',sans-serif;font-weight:600;font-size:1.15rem}
+.legal p,.legal li{color:#4A3A2D}.legal p{margin:0 0 14px}.legal ul,.legal ol{margin:0 0 16px;padding-left:1.3em}.legal li{margin-bottom:6px}
+.legal .lead{font-size:1.2rem}.legal .meta{font-size:.95rem;color:#6B5A4C}
+.legal dl{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:8px 20px;margin:0 0 16px;padding:20px 24px;background:#FFFDF8;border-radius:16px}
+.legal dt{font-weight:600;color:#6B5A4C}.legal dd{margin:0;overflow-wrap:anywhere}
+.legal table{width:100%;border-collapse:collapse;margin:8px 0 16px;background:#FFFDF8;border-radius:16px;overflow:hidden;font-size:1rem}
+.legal th,.legal td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid #E8DFD0}.legal th{font-family:'Outfit',sans-serif;font-weight:600}
+.legal .table-wrap{overflow-x:auto}
+.legal .note{background:#FBEBD6;border-radius:16px;padding:18px 22px;margin:8px 0 16px}.legal .note p{margin:0}
+.legal mark{background:#F2B240;color:#33261C;padding:0 4px;border-radius:4px}
+@media (max-width:600px){.legal dl{grid-template-columns:1fr}.legal dt{margin-top:6px}}`;
+const legalDir = path.join(DESIGN, 'jogi');
+if (fs.existsSync(legalDir) && SHELL) {
+  const base = fs.readFileSync(path.join(SITE, 'index.html'), 'utf8');
+  for (const f of fs.readdirSync(legalDir).filter((x) => x.endsWith('.html'))) {
+    const src = fs.readFileSync(path.join(legalDir, f), 'utf8');
+    const meta = Object.fromEntries([...src.match(/<!--([\s\S]*?)-->/)[1].matchAll(/^\s*(\w+):\s*(.+)$/gm)].map((m) => [m[1], m[2].trim()]));
+    const content = src.replace(/<!--[\s\S]*?-->/, '').trim().replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, '</table></div>');
+    const $ = cheerio.load(base);
+    const url = '/' + meta.out.replace(/\.html$/, '');
+    const title = `${meta.title} – Lépj tovább!`;
+    $('title').text(title);
+    $('meta[name="description"], meta[property="og:description"]').attr('content', meta.desc);
+    $('meta[property="og:title"]').attr('content', title);
+    $('link[rel="canonical"]').attr('href', SITE_URL + url);
+    $('meta[property="og:url"]').attr('content', SITE_URL + url);
+    $('meta[property="og:image"]').attr('content', `${SITE_URL}/img/logo/og-alapkep-1200x630.jpg`);
+    $('head style').first().append(LEGAL_CSS);
+    const root = $('body > div').first();
+    root.children().not('header, footer').remove();
+    root.find('[aria-current]').removeAttr('aria-current').css('border-bottom', '').css('color', '#33261C');
+    root.find('header').after(`<main class="legal"><h1>${meta.title}</h1>\n${content}</main>`);
+    fs.writeFileSync(path.join(SITE, meta.out), $.html());
+    console.log('✓', meta.out);
+  }
+}

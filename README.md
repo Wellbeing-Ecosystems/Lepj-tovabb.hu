@@ -28,6 +28,9 @@ Statikus HTML-oldalak, külső keretrendszer nélkül. Vercelen futnak.
 | Cikk: Mennyi ideig tart a gyász? | `/cikkek/mennyi-ideig-tart-a-gyasz` |
 | Cikk: Mit él át egy gyermek váláskor? | `/cikkek/mit-el-at-egy-gyermek-valaskor` |
 | Cikk: Mikor állok készen új kapcsolatra? | `/cikkek/mikor-allok-keszen-uj-kapcsolatra` |
+| Adatkezelési tájékoztató | `/adatkezeles` |
+| ÁSZF | `/aszf` |
+| Impresszum | `/impresszum` |
 
 ## Közzététel Vercelen
 
@@ -39,12 +42,16 @@ Minden `main` ágra küldött módosítás után a Vercel automatikusan frissít
 
 ## Élesítés előtt
 
-- [ ] Kitölteni a szögletes zárójeles helyeket: `[E-mail cím]`, `[Telefonszám]`, a hiányzó GYIK-válaszok, a csoport létszáma, időpontja és helyszíne.
+- [ ] Kezdési időpont, részvételi díj, fizetési mód, lemondási szabályok (Program oldal, ÁSZF 6–7. és 11. pont).
+- [ ] 4 GYIK-válasz.
+- [ ] Bevétel.hu: az űrlap beágyazási címe (`BEVETEL_URL` a `tools/build.mjs`-ben), valamint a Bevétel.hu üzemeltetőjének cégneve és székhelye az adatkezelési tájékoztatóhoz.
+- [ ] Könyvelő / számlázóprogram az adatfeldolgozók között.
+- [ ] A jogi dokumentumok (adatkezelés, ÁSZF, impresszum) jogi felülvizsgálata – különösen a fogyasztói elállási jog (ÁSZF 8. pont).
 - [ ] Valódi fotó: csoportmunka, helyszín. A többi kép AI-illusztráció, nem valódi résztvevőket ábrázol.
-- [ ] Jelentkezési űrlap bekötése, pl. Formspree vagy Web3Forms. Jelenleg az űrlap nem küld semmit.
-- [ ] Adatkezelési tájékoztató és impresszum.
 - [ ] A segélyvonal-számok ellenőrzése: 116-123, 116-111, OKIT 06 80 205 520.
-- [ ] A `tools/build.mjs` fájlban: `NOINDEX = false` (addig a keresők nem indexelik az oldalt), és a `SITE_URL` legyen a végleges domain.
+- [ ] A `tools/build.mjs` fájlban: `NOINDEX = false` (addig a keresők nem indexelik az oldalt).
+
+A jogi szövegek forrása: `design/jogi/*.html`. A szerkezetük az Együttjól jóváhagyott dokumentumait követi.
 
 ## Módosítás a terv alapján
 

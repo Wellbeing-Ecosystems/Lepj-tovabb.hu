@@ -20,8 +20,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32.png">
 <link rel="apple-touch-icon" href="/img/logo/apple-touch-icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -30,6 +30,8 @@ body{margin:0;background:#F8F4EC}
 a{color:#7A3E17}a:hover{color:#4F2810}
 summary::-webkit-details-marker{color:#7A3E17}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #D9701C;outline-offset:3px}
+.legal-links{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:20px;border-top:1px solid rgba(232,223,208,.25);font-size:.95rem}
+.legal-links a{color:#E8DFD0}
 .menu-btn{display:none;align-items:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid #CFC3AF;border-radius:999px;background:#FFFDF8;color:#33261C;font:600 1rem 'Outfit',sans-serif;cursor:pointer}
 @media (max-width: 1080px){
   .menu-btn{display:inline-flex}
@@ -148,8 +150,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 <textarea id="uzenet" rows="5" style="font: inherit; padding: 14px 16px; border: 1.5px solid #CFC3AF; border-radius: 12px; background: #FFFDF8; color: #33261C; resize: vertical"></textarea>
 </div>
 <label style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: #4A3A2D">
+<input type="checkbox" required="" style="width: 22px; height: 22px; margin: 2px 0 0; accent-color: #7A3E17; flex: none">
+<span>Elolvastam az <a href="/adatkezeles">adatkezelési tájékoztatót</a> és az <a href="/aszf">ÁSZF-et</a>, és hozzájárulok, hogy az általam megadott adatokat a jelentkezésem kezelése céljából kezeljék.</span>
+</label>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: #4A3A2D">
 <input type="checkbox" style="width: 22px; height: 22px; margin: 2px 0 0; accent-color: #7A3E17; flex: none">
-<span>Elolvastam és elfogadom az <a href="#">adatkezelési tájékoztatót</a>.</span>
+<span>Feliratkozom a hírlevélre – értesítést kérek az új alkalmakról és cikkekről. (Nem kötelező, bármikor leiratkozhatok.)</span>
 </label>
 <button type="button" style="align-self: flex-start; font: inherit; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; background: #7A3E17; color: #FFFDF8; border: 0; border-radius: 999px; padding: 16px 34px; cursor: pointer">Időpontot foglalok</button>
 </form>
@@ -159,9 +165,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,t
 <footer style="background: #33261C; color: #E8DFD0">
 <div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 1rem">
 <span style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #FFFDF8">Lépj tovább!</span>
-<span>[E-mail cím] · [Telefonszám]</span>
+<span>zoltan.lovasz68@gmail.com · +36 20 291 0852</span>
 </div>
-</footer>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 32px"><nav aria-label="Jogi információk" class="legal-links"><a href="/adatkezeles">Adatkezelési tájékoztató</a><a href="/aszf">ÁSZF</a><a href="/impresszum">Impresszum</a></nav></div></footer>
 
 </div>
 <script>

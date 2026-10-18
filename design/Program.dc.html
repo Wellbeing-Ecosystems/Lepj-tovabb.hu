@@ -78,6 +78,15 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 
 <section style="background: #F8F4EC">
 <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 22px">
+<div style="background: #FFFDF8; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px">
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.6rem; color: #33261C">Őszi alkalmak 2026</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{dates}}" as="d" hint-placeholder-count="5">
+<li style="display: flex; flex-direction: column; background: #F8F4EC; border-radius: 14px; padding: 12px 18px; min-width: 120px"><span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; color: #7A3E17">{{d.d}}</span><span style="font-size: 0.95rem; color: #6B5A4C">{{d.w}}</span></li>
+</sc-for>
+</ul>
+<p style="margin: 0; color: #4A3A2D">Helyszín: <strong>1137 Budapest, Szent István krt. 18.</strong> · Kezdés: <strong>[időpont]</strong>. A csoport nyitott, bármelyik alkalomhoz csatlakozhatsz.</p>
+</div>
 <h2 style="margin: 0 0 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.15; color: #33261C">A 12 alkalom témái</h2>
 <sc-for list="{{modules}}" as="m" hint-placeholder-count="4">
 <article style="display: flex; flex-wrap: wrap; gap: 28px 56px; background: #FFFDF8; border-radius: 24px; padding: 40px">
@@ -112,22 +121,29 @@ a{color:#7A3E17}a:hover{color:#4F2810}
 <footer style="background: #33261C; color: #E8DFD0">
 <div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 1rem">
 <span style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #FFFDF8">Lépj tovább!</span>
-<span>[E-mail cím] · [Telefonszám]</span>
+<span>zoltan.lovasz68@gmail.com · +36 20 291 0852</span>
 </div>
 </footer>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3400}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3700}}'>
 class Component extends DCLogic {
 renderVals() {
 return {
 facts: [
 { k: 'Időtartam', v: '12 alkalom, kb. 90 perc' },
 { k: 'Forma', v: 'Nyitott csoport, nyílt napokkal' },
-{ k: 'Következő nyílt nap', v: '[dátum, helyszín]' },
-{ k: 'Alkalmak ideje', v: '[nap, időpont, helyszín]' },
-{ k: 'Csoportlétszám', v: '[max. X fő]' }
+{ k: 'Következő alkalom', v: '2026. október 21., szerda' },
+{ k: 'Alkalmak', v: 'kéthetente szerdán, [időpont]' },
+{ k: 'Helyszín', v: '1137 Budapest, Szent István krt. 18.' }
+],
+dates: [
+{ d: 'okt. 21.', w: 'szerda' },
+{ d: 'nov. 4.', w: 'szerda' },
+{ d: 'nov. 18.', w: 'szerda' },
+{ d: 'dec. 2.', w: 'szerda' },
+{ d: 'dec. 16.', w: 'szerda' }
 ],
 steps: [
 { m: '15 perc', t: 'Érkezőkör', d: 'kapcsolódás, hogy ki milyen állapotban érkezett' },
