@@ -18,6 +18,49 @@ const NOINDEX = true;
 const BEVETEL_URL = 'https://bevetel.hu/intrest?id=5c42f2d626098559&lang=hu';
 const FONT_HEAD = '<link rel="preload" href="/fonts/outfit-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="stylesheet" href="/fonts/fonts.css">';
 const LEGAL_LINKS = '<nav aria-label="Jogi információk" class="legal-links"><a href="/adatkezeles">Adatkezelési tájékoztató</a><a href="/aszf">ÁSZF</a><a href="/impresszum">Impresszum</a></nav>';
+// Google Tag Manager (GTM-5P75SGPQ). A Google-hozzájárulási mód alapból mindent tilt;
+// a sütisáv „Elfogadom” gombja után engedélyezi a méréseket. A választás a böngészőben marad (localStorage).
+const GTM_ID = 'GTM-5P75SGPQ';
+function gtmHead(pageType) {
+  return `<!-- Google Tag Manager – hozzájárulás alapértéke (a GTM előtt kell lefutnia) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('lt_suti') === 'igen') gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } catch (e) {}
+  dataLayer.push({ page_type: '${pageType}'${pageType === 'jelentkezes' ? ", jelentkezesi_oldal: true" : ''} });
+</script>
+<script async src="https://www.googletagmanager.com/gtm.js?id=${GTM_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<!-- /Google Tag Manager -->`;
+}
+// Sütisáv: minden oldal aljára; a láblécbe „Süti-beállítások” gomb kerül, amellyel újra megnyitható.
+const COOKIE_BANNER = `<div id="sutisav" role="dialog" aria-live="polite" aria-label="Sütik" hidden style="position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;max-width:760px;margin:0 auto;background:#FFFDF8;color:#33261C;border:1px solid #E8DFD0;border-radius:20px;box-shadow:0 10px 30px rgba(51,38,28,.18);padding:18px 22px;font-family:'Source Sans 3',sans-serif;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
+<p style="margin:0;flex:1 1 320px;font-size:1rem;line-height:1.5">Látogatottságméréshez sütiket használnánk, hogy lássuk, mi segít a legtöbbet az oldalon. Csak a hozzájárulásoddal kapcsoljuk be. <a href="/adatkezeles#sutik" style="color:#7A3E17">Részletek</a></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" data-suti="nem" style="min-height:44px;padding:0 18px;border:1.5px solid #CFC3AF;border-radius:999px;background:#FFFDF8;color:#33261C;font:600 1rem 'Outfit',sans-serif;cursor:pointer">Elutasítom</button><button type="button" data-suti="igen" style="min-height:44px;padding:0 18px;border:0;border-radius:999px;background:#7A3E17;color:#FFFDF8;font:600 1rem 'Outfit',sans-serif;cursor:pointer">Elfogadom</button></div>
+</div>
+<script>
+(function(){var sav=document.getElementById('sutisav');if(!sav)return;var v=null;try{v=localStorage.getItem('lt_suti');}catch(e){}
+function nyit(){sav.hidden=false;sav.style.display='flex';}function zar(){sav.hidden=true;sav.style.display='none';}
+if(!v)nyit();else zar();
+sav.addEventListener('click',function(e){var b=e.target.closest('[data-suti]');if(!b)return;var igen=b.getAttribute('data-suti')==='igen';var s=igen?'granted':'denied';
+try{localStorage.setItem('lt_suti',igen?'igen':'nem');}catch(e){}
+gtag('consent','update',{ad_storage:s,ad_user_data:s,ad_personalization:s,analytics_storage:s});dataLayer.push({event:igen?'suti_elfogadva':'suti_elutasitva'});zar();});
+document.querySelectorAll('.legal-links').forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent='Süti-beállítások';b.className='suti-link';b.addEventListener('click',nyit);n.appendChild(b);});})();
+</script>`;
+// Csak a jelentkezési oldalon: külön GTM-események a jelentkezéshez.
+// A Bevétel.hu űrlap más domainről, iframe-ben fut, ezért a beküldést innen nem lehet látni;
+// azt mérjük, hogy az űrlap láthatóvá vált-e, és hogy a látogató belekattintott-e.
+const JELENTKEZES_TRACKING = `<script>
+(function(){window.dataLayer=window.dataLayer||[];dataLayer.push({event:'jelentkezes_oldal_megtekintes'});
+var doboz=document.getElementById('jelentkezes-urlap');if(!doboz)return;var f=doboz.querySelector('iframe');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es.some(function(x){return x.isIntersecting;})){dataLayer.push({event:'jelentkezes_urlap_megtekintes'});io.disconnect();}},{threshold:0.4});io.observe(doboz);}
+var volt=false;window.addEventListener('blur',function(){setTimeout(function(){if(!volt&&document.activeElement===f){volt=true;dataLayer.push({event:'jelentkezes_urlap_interakcio'});}},0);});})();
+</script>`;
 let SHELL = null; // a főoldal fejléce és lábléce a jogi oldalakhoz
 
 const PAGES = {
@@ -35,7 +78,7 @@ const PAGES = {
     desc: 'A Lépj tovább! koncepciója és oktatóink, Tímár Ildikó és Lovász Zoltán bemutatkozása.' },
   'Cikkek.dc.html': { out: 'cikkek/index.html', url: '/cikkek', og: '06_no_tea_kanape',
     desc: 'Cikkek a válás feldolgozásáról, a gyermekekről, az újrakezdésről és a kapcsolatokról.' },
-  'Jelentkezes.dc.html': { out: 'jelentkezes.html', url: '/jelentkezes', og: '10_tea_jegyzetfuzet',
+  'Jelentkezes.dc.html': { out: 'jelentkezes.html', url: '/jelentkezes', pageType: 'jelentkezes', og: '10_tea_jegyzetfuzet',
     desc: 'Gyakori kérdések és jelentkezés díjmentes konzultációra a Lépj tovább! válásfeldolgozó csoportba.' },
   'Cikk-gyasz.dc.html': { out: 'cikkek/mennyi-ideig-tart-a-gyasz.html', url: '/cikkek/mennyi-ideig-tart-a-gyasz', og: '06_no_tea_kanape', article: true,
     desc: 'A válás utáni gyásznak nincs menetrendje – de vannak jelek, amelyekből láthatod, hogy halad a folyamat.' },
@@ -171,7 +214,7 @@ function build(file) {
     if (!$(f).find('a[href="/impresszum"]').length) $(f).append(`<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px 32px">${LEGAL_LINKS}</div>`);
   });
   if (BEVETEL_URL && file === 'Jelentkezes.dc.html') {
-    $(xdc).find('form').replaceWith(`<div style="flex: 1 1 480px; min-width: 0; background: #FFFDF8; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 10px"><iframe src="${BEVETEL_URL}" title="Jelentkezés – Lépj tovább!" width="100%" height="640" loading="lazy" style="border: none; background: transparent"></iframe><p style="margin: 0 12px 8px; font-size: 0.95rem; color: #4A3A2D">Az űrlap elküldésével elfogadod az <a href="/adatkezeles">adatkezelési tájékoztatót</a> és az <a href="/aszf">ÁSZF-et</a>.</p></div>`);
+    $(xdc).find('form').replaceWith(`<div id="jelentkezes-urlap" data-gtm-jelentkezes="urlap" style="flex: 1 1 480px; min-width: 0; background: #FFFDF8; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 10px"><iframe src="${BEVETEL_URL}" title="Jelentkezés – Lépj tovább!" width="100%" height="640" loading="lazy" style="border: none; background: transparent"></iframe><p style="margin: 0 12px 8px; font-size: 0.95rem; color: #4A3A2D">Az űrlap elküldésével elfogadod az <a href="/adatkezeles">adatkezelési tájékoztatót</a> és az <a href="/aszf">ÁSZF-et</a>.</p></div>`);
   }
   if (file === 'Main.dc.html') {
     SHELL = { header: $.html($(xdc).find('header').first()), footer: $.html($(xdc).find('footer').first()), css, fontLinks };
@@ -183,6 +226,7 @@ function build(file) {
   const html = `<!doctype html>
 <html lang="hu">
 <head>
+${gtmHead(meta.pageType || 'oldal')}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
@@ -210,7 +254,8 @@ ${css}
 summary::-webkit-details-marker{color:#7A3E17}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #D9701C;outline-offset:3px}
 .legal-links{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:20px;border-top:1px solid rgba(232,223,208,.25);font-size:.95rem}
-.legal-links a{color:#E8DFD0}
+.legal-links a,.legal-links .suti-link{color:#E8DFD0}
+.suti-link{background:none;border:0;padding:0;font:inherit;text-decoration:underline;cursor:pointer}
 .menu-btn{display:none;align-items:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid #CFC3AF;border-radius:999px;background:#FFFDF8;color:#33261C;font:600 1rem 'Outfit',sans-serif;cursor:pointer}
 @media (max-width: 1080px){
   .menu-btn{display:inline-flex}
@@ -227,7 +272,8 @@ ${body}
 (function(){var b=document.querySelector('.menu-btn');if(!b)return;var h=b.closest('.site-header');
 b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü bezárása':'Menü megnyitása');});})();
 </script>
-</body>
+${COOKIE_BANNER}
+${file === 'Jelentkezes.dc.html' ? JELENTKEZES_TRACKING + '\n' : ''}</body>
 </html>
 `;
   const outPath = path.join(SITE, meta.out);
