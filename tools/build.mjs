@@ -324,3 +324,35 @@ if (fs.existsSync(legalDir) && SHELL) {
     console.log('✓', meta.out);
   }
 }
+
+// Köszönőoldal: a Bevétel.hu űrlap sikeres beküldés után ide irányít (Bevétel.hu → Csatorna → Köszönőoldal URL).
+// Itt fut le a „jelentkezes_elkuldve” GTM-esemény, ez a tényleges jelentkezés (konverzió) mérése.
+{
+  const base = fs.readFileSync(path.join(SITE, 'index.html'), 'utf8');
+  const $ = cheerio.load(base);
+  const title = 'Köszönjük a jelentkezésed! – Lépj tovább!';
+  $('title').text(title);
+  $('head script').first().html($('head script').first().html().replace(/page_type: '[^']*'/, "page_type: 'koszonjuk'"));
+  $('meta[name="description"], meta[property="og:description"]').attr('content', 'Köszönjük a jelentkezésed a Lépj tovább! csoportba.');
+  $('meta[property="og:title"]').attr('content', title);
+  $('link[rel="canonical"]').attr('href', SITE_URL + '/koszonjuk');
+  $('meta[property="og:url"]').attr('content', SITE_URL + '/koszonjuk');
+  $('meta[name="robots"]').remove();
+  $('head').append('<meta name="robots" content="noindex, nofollow">');
+  const root = $('body > div').first();
+  root.children().not('header, footer').remove();
+  root.find('[aria-current]').removeAttr('aria-current').css('border-bottom', '').css('color', '#33261C');
+  root.find('header').after(`<main style="max-width: 760px; margin: 0 auto; padding: 96px 24px 112px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px">
+<h1 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.12; color: #7A3E17">Köszönjük, megkaptuk a jelentkezésed!</h1>
+<p style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 1.3rem; color: #4A3A2D">Ezzel megtetted az első lépést.</p>
+<p style="margin: 0; color: #4A3A2D">Hamarosan felvesszük veled a kapcsolatot a megadott elérhetőségeiden, és egyeztetjük a díjmentes konzultáció időpontját. Ha addig kérdésed van, írj nekünk: <a href="mailto:hello@lepj-tovabb.hu">hello@lepj-tovabb.hu</a>.</p>
+<a href="/" style="margin-top: 12px; text-decoration: none; background: #7A3E17; color: #FFFDF8; padding: 16px 28px; border-radius: 999px; font-family: 'Outfit', sans-serif; font-weight: 600">Vissza a főoldalra</a>
+</main>`);
+  $('body').append(`<script>
+(function(){window.dataLayer=window.dataLayer||[];var k='lt_jelentkezes_'+location.search;var m=false;try{m=sessionStorage.getItem(k);}catch(e){}
+if(!m){dataLayer.push({event:'jelentkezes_elkuldve'});try{sessionStorage.setItem(k,'1');}catch(e){}}})();
+</script>
+`);
+  fs.writeFileSync(path.join(SITE, 'koszonjuk.html'), $.html());
+  console.log('✓ koszonjuk.html');
+}
