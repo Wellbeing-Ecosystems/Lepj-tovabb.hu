@@ -46,6 +46,7 @@ Minden `main` ágra küldött módosítás után a Vercel automatikusan frissít
 - [x] A hello@lepj-tovabb.hu levelezés szolgáltatója – a tájékoztatóból egyelőre kihagyva (2026-11-23 döntés).
 - [ ] 4 GYIK-válasz.
 - [x] Bevétel.hu űrlap beágyazva (`BEVETEL_URL` a `tools/build.mjs`-ben).
+- [ ] Bevétel.hu → Marketing → Csatornák → „Köszönőoldal URL”: `https://lepj-tovabb.hu/koszonjuk` (itt mérjük a beküldést: `jelentkezes_elkuldve`).
 - [x] Bevétel.hu – cégnév és székhely nélkül szerepel (2026-11-23 döntés).
 - [x] Könyvelő / számlázóprogram – a tájékoztatóból egyelőre kihagyva (2026-11-23 döntés).
 - [x] Jogi dokumentumok elfogadva, hatályos 2026. november 23-tól (elállási jog: a 45/2014. Korm. r. 29. § (1) l) szerinti kivétel).
