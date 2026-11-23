@@ -92,10 +92,10 @@ const ready = (t, href) => ({ t, href, s: 'Elolvasom →', sc: '#7A3E17' });
 const soon = (t) => ({ t, href: 'Cikkek.dc.html', s: 'Hamarosan', sc: '#6B5A4C' });
 return {
 cats: [
-{ name: 'Válás feldolgozása', c: '#A9520E', posts: [ready('Mennyi ideig tart a gyász válás után?', 'Cikk-gyasz.dc.html'), soon('Hogyan dolgozzuk fel a válást?'), soon('Miért nem tudom elengedni?')] },
-{ name: 'Gyermekek és válás', c: '#4D6428', posts: [ready('Mit él át egy gyermek váláskor?', 'Cikk-gyermek.dc.html'), soon('Közös szülőség konfliktus nélkül')] },
-{ name: 'Újrakezdés', c: '#A9520E', posts: [ready('Mikor állok készen új kapcsolatra?', 'Cikk-uj-kapcsolat.dc.html'), soon('Önbizalom válás után'), soon('Hogyan építsek új életet 40 felett?')] },
-{ name: 'Kapcsolatok', c: '#4D6428', posts: [soon('Toxikus exkapcsolatok'), soon('Egészséges határok kialakítása')] }
+{ name: 'Válás feldolgozása', c: '#A9520E', posts: [ready('Mennyi ideig tart a gyász válás után?', 'Cikk-gyasz.dc.html'), ready('Hogyan dolgozzuk fel a válást?', 'Cikk-feldolgozas.dc.html'), ready('Miért nem tudom elengedni?', 'Cikk-elengedes.dc.html')] },
+{ name: 'Gyermekek és válás', c: '#4D6428', posts: [ready('Mit él át egy gyermek váláskor?', 'Cikk-gyermek.dc.html'), ready('Közös szülőség konfliktus nélkül', 'Cikk-kozos-szuloseg.dc.html')] },
+{ name: 'Újrakezdés', c: '#A9520E', posts: [ready('Mikor állok készen új kapcsolatra?', 'Cikk-uj-kapcsolat.dc.html'), ready('Önbizalom válás után', 'Cikk-onbizalom.dc.html'), ready('Hogyan építsek új életet 40 felett?', 'Cikk-40-felett.dc.html')] },
+{ name: 'Kapcsolatok', c: '#4D6428', posts: [ready('Toxikus exkapcsolatok', 'Cikk-toxikus.dc.html'), ready('Egészséges határok kialakítása', 'Cikk-hatarok.dc.html')] }
 ]
 };
 }

@@ -86,6 +86,20 @@ const PAGES = {
     desc: 'Mit él át egy gyermek váláskor, életkor szerint – és mit tehetsz szülőként, hogy biztonságban érezze magát.' },
   'Cikk-uj-kapcsolat.dc.html': { out: 'cikkek/mikor-allok-keszen-uj-kapcsolatra.html', url: '/cikkek/mikor-allok-keszen-uj-kapcsolatra', og: '08_ferfi_kavezoban', article: true,
     desc: 'Öt kérdés, amely segít eldönteni, készen állsz-e egy új kapcsolatra a válás után.' },
+  'Cikk-feldolgozas.dc.html': { out: 'cikkek/hogyan-dolgozzuk-fel-a-valast.html', url: '/cikkek/hogyan-dolgozzuk-fel-a-valast', og: '09_oszi_erdo', article: true,
+    desc: 'A válás feldolgozása nem egyetlen döntés, hanem folyamat. Mi segít benne, mi nehezíti, és honnan tudod, hogy jó irányba haladsz?' },
+  'Cikk-elengedes.dc.html': { out: 'cikkek/miert-nem-tudom-elengedni.html', url: '/cikkek/miert-nem-tudom-elengedni', og: '03_ferfi_ablaknal', article: true,
+    desc: 'Tudod, hogy vége, mégis visszahúz. Mi tart fogva egy véget ért kapcsolatban, és hogyan lehet lépésről lépésre elengedni?' },
+  'Cikk-kozos-szuloseg.dc.html': { out: 'cikkek/kozos-szuloseg-konfliktus-nelkul.html', url: '/cikkek/kozos-szuloseg-konfliktus-nelkul', og: '04_apa_gyermek_park', article: true,
+    desc: 'Párként vége, szülőként nem. Gyakorlati útmutató a válás utáni együttműködéshez: kommunikáció, szabályok, átadások és határok.' },
+  'Cikk-onbizalom.dc.html': { out: 'cikkek/onbizalom-valas-utan.html', url: '/cikkek/onbizalom-valas-utan', og: '08_ferfi_kavezoban', article: true,
+    desc: 'A válás gyakran az önértékelést is megrendíti. Honnan jön a „nem vagyok elég” érzése, és hogyan lehet újraépíteni az önbizalmat?' },
+  'Cikk-40-felett.dc.html': { out: 'cikkek/uj-elet-40-felett.html', url: '/cikkek/uj-elet-40-felett', og: '01_ujrakezdes_osveny', article: true,
+    desc: 'Válás 40, 50 vagy 60 felett: nem késő újrakezdeni. Gyakorlati gondolatok az új napi rendről, a kapcsolatokról, a pénzügyekről és a jövőképről.' },
+  'Cikk-toxikus.dc.html': { out: 'cikkek/toxikus-exkapcsolatok.html', url: '/cikkek/toxikus-exkapcsolatok', og: '05_hatizsak_atadas', article: true,
+    desc: 'Mikor válik egy válás utáni kapcsolat mérgezővé? Ismerd fel a jeleket – manipuláció, bűntudatkeltés, játszmák –, és tudd, mit tehetsz.' },
+  'Cikk-hatarok.dc.html': { out: 'cikkek/egeszseges-hatarok-kialakitasa.html', url: '/cikkek/egeszseges-hatarok-kialakitasa', og: '10_tea_jegyzetfuzet', article: true,
+    desc: 'A határok nem falak, hanem keretek, amelyek megvédik az energiádat. Hogyan húzz határt az expartnerrel, a családdal és saját magaddal szemben?' },
 };
 
 // A tervben használt képek (asset-azonosító → fájlnév-tő, elérhető szélességek, eredeti méret)
