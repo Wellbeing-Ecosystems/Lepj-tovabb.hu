@@ -50,7 +50,7 @@ if(!v)nyit();else zar();
 sav.addEventListener('click',function(e){var b=e.target.closest('[data-suti]');if(!b)return;var igen=b.getAttribute('data-suti')==='igen';var s=igen?'granted':'denied';
 try{localStorage.setItem('lt_suti',igen?'igen':'nem');}catch(e){}
 gtag('consent','update',{ad_storage:s,ad_user_data:s,ad_personalization:s,analytics_storage:s});dataLayer.push({event:igen?'suti_elfogadva':'suti_elutasitva'});zar();});
-document.querySelectorAll('.legal-links').forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent='Süti-beállítások';b.className='suti-link';b.addEventListener('click',nyit);n.appendChild(b);});})();
+var hely=[];document.querySelectorAll('footer a[href="/impresszum"]').forEach(function(a){if(hely.indexOf(a.parentNode)<0)hely.push(a.parentNode);});hely.forEach(function(n){var b=document.createElement('button');b.type='button';b.textContent='Süti-beállítások';b.className='suti-link';b.style.color='#E8DFD0';b.style.textAlign='left';b.style.alignSelf='flex-start';b.addEventListener('click',nyit);n.appendChild(b);});})();
 </script>`;
 // Csak a jelentkezési oldalon: külön GTM-események a jelentkezéshez.
 // A Bevétel.hu űrlap más domainről, iframe-ben fut, ezért a beküldést innen nem lehet látni;
