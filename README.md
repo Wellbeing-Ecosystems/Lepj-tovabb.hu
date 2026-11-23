@@ -42,13 +42,13 @@ Minden `main` ágra küldött módosítás után a Vercel automatikusan frissít
 
 ## Élesítés előtt
 
-- [ ] Fizetési mód és a lemondás nélküli távolmaradás szabálya (ÁSZF 6–7. pont).
-- [ ] A hello@lepj-tovabb.hu levelezés szolgáltatója (adatfeldolgozóként az adatkezelési tájékoztatóba).
+- [x] Fizetési mód (készpénz a helyszínen) és a lemondás nélküli távolmaradás szabálya (díjmentes) – ÁSZF 6–7. pont.
+- [x] A hello@lepj-tovabb.hu levelezés szolgáltatója – a tájékoztatóból egyelőre kihagyva (2026-11-23 döntés).
 - [ ] 4 GYIK-válasz.
 - [x] Bevétel.hu űrlap beágyazva (`BEVETEL_URL` a `tools/build.mjs`-ben).
-- [ ] A Bevétel.hu üzemeltetőjének cégneve és székhelye az adatkezelési tájékoztatóhoz.
-- [ ] Könyvelő / számlázóprogram az adatfeldolgozók között.
-- [ ] A jogi dokumentumok (adatkezelés, ÁSZF, impresszum) jogi felülvizsgálata – különösen a fogyasztói elállási jog (ÁSZF 8. pont).
+- [x] Bevétel.hu – cégnév és székhely nélkül szerepel (2026-11-23 döntés).
+- [x] Könyvelő / számlázóprogram – a tájékoztatóból egyelőre kihagyva (2026-11-23 döntés).
+- [x] Jogi dokumentumok elfogadva, hatályos 2026. november 23-tól (elállási jog: a 45/2014. Korm. r. 29. § (1) l) szerinti kivétel).
 - [ ] Valódi fotó: csoportmunka, helyszín. A többi kép AI-illusztráció, nem valódi résztvevőket ábrázol.
 - [ ] A segélyvonal-számok ellenőrzése: 116-123, 116-111, OKIT 06 80 205 520.
 - [ ] A `tools/build.mjs` fájlban: `NOINDEX = false` (addig a keresők nem indexelik az oldalt).
